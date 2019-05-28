@@ -1,0 +1,50 @@
+html, body {
+    height: 100%;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+ /*  .content {
+    flex: 1 0 auto;
+  } */
+ /*  .footer {
+    flex-shrink: 0;
+  } */
+
+
+.background{
+    background-image: url('../images/glitter-purple-background.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.content-container {
+  
+    padding-top: 50px;
+	justify-content: center;
+	align-items: center;
+/*	background-color:#9097a0;
+	background-color: purple; */
+    flex: 1 0 auto;
+/*	height: 40%; */
+
+}
+    
+
+.myFooter {
+	padding: 45px 0px 0px 0px;
+    margin-bottom: 0;
+    justify-content: center;
+	text-align: center;
+	flex-shrink: 0;
+}
+
+.question {
+  padding: 10px 15px 45px 30px;
+  margin-bottom: 25px; 
+}
+
+.radio-row {
+  padding-left: 20px;
+}
