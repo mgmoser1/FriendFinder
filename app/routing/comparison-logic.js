@@ -84,6 +84,61 @@ var friends = [
 ];
 
 
+var newFriend = [
+    {
+        name: "Ginger",
+        picture: "linkylink",
+        scores: [1,3,4,5,2,1,4,2,1,4]
 
-    module.exports = friends;
+    }
+];
+
+var friendScores = friends.map(a => a.scores);
+
+var newScores = newFriend[0].scores;
+
+var closest = 40;
+
+function compareArrs (arr1, arr2) {
+    var difference = 0;
+for (var i=0;i<arr1.length; i++){
+    var d = Math.abs(arr1[i] - arr2[i]); // put this is findClosest loop so it loops through arr1.
+    difference += d;
+}
+console.log("This is difference in compareArrs:" + difference);
+return difference;
+}
+// NEED TO PULL THE INDEX FROM FRIENDS //
+function findClosest (arr1, arr2) {
+
+    var closestIndex;
   
+    for (var i=0; i<arr1.length; i++) {
+
+        var d = compareArrs (arr1[i], arr2);
+        if (d < closest){
+            closest = d;
+            closestIndex = i;
+        }
+        console.log("This is closest in findClosest: " + closest); // this finds the lowest number
+    }
+    return closestIndex;
+}
+
+var bestScoreIndex = findClosest(friendScores, newScores);
+
+var bestMatch = {
+    name: "",
+    picture: "",
+    score: 40
+};
+
+bestMatch = {
+    name: friends[bestScoreIndex].name,
+    picture: friends[bestScoreIndex].picture,
+    score: closest
+};
+
+console.log(bestMatch);
+
+// ADD newFriend to friends //
