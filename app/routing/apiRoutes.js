@@ -9,23 +9,56 @@ module.exports = function (app) {
 	// Displays all friends
 	app.get('/api/friends', function (req, res) {
 		res.json(friends);
-	});
+    });
+    
+    /* This is what's coming in from the html file:
+    
+    var userData = {
+                    name: $("#name").val(),
+                    picture: $("#picture-link").val(),
+                    scores: [
+                        $("q1").val(),
+                        $("q2").val(),
+                        $("q3").val(),
+                        $("q4").val(),
+                        $("q5").val(),
+                        $("q6").val(),
+                        $("q7").val(),
+                        $("q8").val(),
+                        $("q9").val(),
+                        $("q10").val()
+                    ]
+                };
+                var currentURL = window.locatoin.origin;
+            $.post(currentURL + "api/friends", userData, function(data) {
+                $("#matchName").text(data.name);
+                $("#matchPicture").attr("src", data.picture);
+                $("#matchModal").modal("toggle");
+            })
+    
+    
+    */
 
 	// Create New Friends - takes in JSON input
 	app.post('/api/friends', function (req, res) {
 		// req.body hosts is equal to the JSON post sent from the user
-		// This works because of our body parsing middleware
+        // This works because of our body parsing middleware
+        
+        console.log(req.scores);
 
-		var response = req.body;
-		var newName = response.name;
-		var newPicture = response.pictureLink;
-		var newScores = response.scores; // not sure about this.
+        var userData = req.body;
+		var userName = userData.name;
+		var userPicture = userData.picture;
+        var userScores = userData.scores; // not sure about this.
+        
+        /* var parsedScores = userScores.map(function (each) {
+			parseInt(each, 10);
+		}); */
 
-		var parsedScores = newScores.map(function (each) {
-			parseint(each);
-		});
+        var parsedScores = userScores.map(Number);
 
-		console.log(newName);
+        console.log(userName);
+        
 		var bestMatch = {
 			name: "",
 			picture: "",
@@ -35,17 +68,19 @@ module.exports = function (app) {
 		// call the compareArrs function inside a for loop that loops over friends[i].scores.
 		var newFriend = [
 			{
-				name: newName,
-				picture: newPicture,
-				scores: parsedScores
+				name: req.body.name,
+				picture: req.body.picture,
+				scores: parsedScores // userData.scores
 
 			}
 		];
 
 
-		var friendScores = friends.map(a => a.scores);
+        var friendScores = friends.map(a => a.scores);
+    //    console.log("friendScores from apiRoutes: " + friendScores);
 
 		var newScores = newFriend[0].scores;
+    //    console.log("newScores from apiRoutes: " + newScores);
 
 		var closest = 40;
 
@@ -75,7 +110,7 @@ module.exports = function (app) {
 			return closestIndex;
 		}
 
-		var bestScoreIndex = findClosest(friendScores, newScores);
+		var bestScoreIndex = findClosest(friendScores, userScores);
 
 
 		bestMatch = {
@@ -84,23 +119,15 @@ module.exports = function (app) {
 			score: closest
 		};
 
-		console.log(bestMatch);
-		// Using a RegEx Pattern to remove spaces from newCharacter
-		// You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-		/* 	newFriend.routeName = newFriend.name
-			.replace(/\s+/g, '')
-			.toLowerCase(); */
-
-		console.log(newFriend);
-
-		friends.push(newFriend);
+        console.log(bestMatch);
+        
+        friends.push(newFriend);
+        
+        console.log("New friend added!");
+	
+        console.log(newFriend);
 
 		res.json(bestMatch);
-	});
-}
 
-
-
-
-
-
+	}); // END api/friends app.post
+} // END MODULE.EXPORTS

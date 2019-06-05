@@ -6,13 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FriendFinder Survey</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- <script src="../server.js"></script> -->
 </head>
 
 <body>
@@ -28,301 +26,134 @@
                         <div class="card-body">
                             <h2 class="card-title content-title">Tell us about yourself.</h2>
 
-
-                            <!-- Form with name, photo, survey, submit button -->
                             <form>
+
                                 <div class="form-group">
                                     <label>A Name: (Required)</label> <br>
-                                    <input type="text" class="form-control input-long" id="name" name="name">
+                                    <input type="text" id="name" name="name" class="form-control input-long" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Link to Picture: (Required)</label> <br>
-                                    <input type="text" class="form-control" id="picture-link" name="pictureLink">
+                                    <input type="text" id="picture-link" name="pictureLink" class="form-control"
+                                        required>
                                 </div>
-                                <fieldset class="question">
-                                    <legend>Question 1: You are 100% loyal to your friends. </legend>
-                                    <div class="form-check form-check-inline radio-row">
-                                        <input class="form-check-input" type="radio" name="one" id="inlineRadio1"
-                                            value="1" checked>
-                                        <label class="form-check-label" for="one-1">1 (strongly disagree)</label>
-                                    </div>
-                                    <div class="form-check form-check-inline radio-row">
-                                        <input class="form-check-input" type="radio" name="one" id="inlineRadio2"
-                                            value="2">
-                                        <label class="form-check-label" for="one-2">2</label>
-                                    </div>
-                                    <div class="form-check form-check-inline radio-row">
-                                        <input class="form-check-input" type="radio" name="one" id="inlineRadio3"
-                                            value="3">
-                                        <label class="form-check-label" for="one-3">3</label>
-                                    </div>
-                                    <div class="form-check form-check-inline radio-row">
-                                        <input class="form-check-input" type="radio" name="one" id="inlineRadio4"
-                                            value="4">
-                                        <label class="form-check-label" for="one-4">4</label>
-                                    </div>
-                                    <div class="form-check form-check-inline radio-row">
-                                        <input class="form-check-input" type="radio" name="one" id="inlineRadio5"
-                                            value="5">
-                                        <label class="form-check-label" for="one-5">5 (strongly agree)</label>
-                                    </div>
-                                </fieldset>
-                                <fieldset class="question">
-                                    <legend>Question 2: You are optimistic. </legend>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="two" id="inlineRadio1"
-                                            value="1" checked>
-                                        <label class="form-check-label" for="two-1">1 (strongly disagree)</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="two" id="inlineRadio2"
-                                            value="2">
-                                        <label class="form-check-label" for="two-2">2</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="two" id="inlineRadio3"
-                                            value="3">
-                                        <label class="form-check-label" for="two-3">3</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="two" id="inlineRadio4"
-                                            value="4">
-                                        <label class="form-check-label" for="two-4">4</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="two" id="inlineRadio5"
-                                            value="5">
-                                        <label class="form-check-label" for="two-5">5 (strongly agree)</label>
-                                    </div>
-                                </fieldset>
-                                <fieldset class="question">
-                                    <legend>Question 3: People understand you all the time.</legend>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="three" id="inlineRadio1"
-                                            value="1" checked>
-                                        <label class="form-check-label" for="three-1">1 (strongly disagree)</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="three" id="inlineRadio2"
-                                            value="2">
-                                        <label class="form-check-label" for="three-2">2</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="three" id="inlineRadio3"
-                                            value="3">
-                                        <label class="form-check-label" for="three-3">3</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="three" id="inlineRadio4"
-                                            value="4">
-                                        <label class="form-check-label" for="three-4">4</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="three" id="inlineRadio5"
-                                            value="5">
-                                        <label class="form-check-label" for="three-5">5 (strongly agree)</label>
-                                    </div>
-                                </fieldset>
-                                <fieldset class="question">
-                                    <legend>Question 4: You are a Weirdo and you love it. </legend>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="four" id="inlineRadio1"
-                                            value="1" checked>
-                                        <label class="form-check-label" for="four-1">1 (strongly disagree)</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="four" id="inlineRadio2"
-                                            value="2">
-                                        <label class="form-check-label" for="four-2">2</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="four" id="inlineRadio3"
-                                            value="3">
-                                        <label class="form-check-label" for="four-3">3</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="four" id="inlineRadio4"
-                                            value="4">
-                                        <label class="form-check-label" for="four-4">4</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="four" id="inlineRadio5"
-                                            value="5">
-                                        <label class="form-check-label" for="four-5">5 (strongly agree)</label>
-                                    </div>
-                                </fieldset>
-                                <fieldset class="question">
-                                    <legend>Question 5: People would describe you as laid back.</legend>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="five" id="inlineRadio1"
-                                            value="1" checked>
-                                        <label class="form-check-label" for="five-1">1 (strongly disagree)</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="five" id="inlineRadio2"
-                                            value="2">
-                                        <label class="form-check-label" for="five-2">2</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="five" id="inlineRadio3"
-                                            value="3">
-                                        <label class="form-check-label" for="five-3">3</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="five" id="inlineRadio4"
-                                            value="4">
-                                        <label class="form-check-label" for="five-4">4</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="five" id="inlineRadio5"
-                                            value="5">
-                                        <label class="form-check-label" for="five-5">5 (strongly agree)</label>
-                                    </div>
-                                </fieldset>
-                                <fieldset class="question">
-                                    <legend>Question 6: You are the most practical person you know.</legend>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="six" id="inlineRadio1"
-                                            value="1" checked>
-                                        <label class="form-check-label" for="six-1">1 (strongly disagree)</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="six" id="inlineRadio2"
-                                            value="2">
-                                        <label class="form-check-label" for="six-2">2</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="six" id="inlineRadio3"
-                                            value="3">
-                                        <label class="form-check-label" for="six-3">3</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="six" id="inlineRadio4"
-                                            value="4">
-                                        <label class="form-check-label" for="six-4">4</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="six" id="inlineRadio5"
-                                            value="5">
-                                        <label class="form-check-label" for="six-5">5 (strongly agree)</label>
-                                    </div>
-                                </fieldset>
-                                <fieldset class="question">
-                                    <legend>Question 7: Your needs come first.</legend>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="seven" id="inlineRadio1"
-                                            value="1" checked>
-                                        <label class="form-check-label" for="seven-1">1 (strongly disagree)</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="seven" id="inlineRadio2"
-                                            value="2">
-                                        <label class="form-check-label" for="seven-2">2</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="seven" id="inlineRadio3"
-                                            value="3">
-                                        <label class="form-check-label" for="seven-3">3</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="seven" id="inlineRadio4"
-                                            value="4">
-                                        <label class="form-check-label" for="seven-4">4</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="seven" id="inlineRadio5"
-                                            value="5">
-                                        <label class="form-check-label" for="seven-5">5 (strongly agree)</label>
-                                    </div>
-                                </fieldset>
-                                <fieldset class="question">
-                                    <legend>Question 8: You'd rather be in the background than be the center of
-                                        attention.</legend>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="eight" id="inlineRadio1"
-                                            value="1" checked>
-                                        <label class="form-check-label" for="eight-1">1 (strongly disagree)</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="eight" id="inlineRadio2"
-                                            value="2">
-                                        <label class="form-check-label" for="eight-2">2</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="eight" id="inlineRadio3"
-                                            value="3">
-                                        <label class="form-check-label" for="eight-3">3</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="eight" id="inlineRadio4"
-                                            value="4">
-                                        <label class="form-check-label" for="eight-4">4</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="eight" id="inlineRadio5"
-                                            value="5">
-                                        <label class="form-check-label" for="eight-5">5 (strongly agree)</label>
-                                    </div>
-                                </fieldset>
-                                <fieldset class="question">
-                                    <legend>Question 9: You love meeting new people.</legend>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="nine" id="inlineRadio1"
-                                            value="1" checked>
-                                        <label class="form-check-label" for="nine-1">1 (strongly disagree)</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="nine" id="inlineRadio2"
-                                            value="2">
-                                        <label class="form-check-label" for="nine-2">2</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="nine" id="inlineRadio3"
-                                            value="3">
-                                        <label class="form-check-label" for="nine-3">3</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="nine" id="inlineRadio4"
-                                            value="4">
-                                        <label class="form-check-label" for="nine-4">4</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="nine" id="inlineRadio5"
-                                            value="5">
-                                        <label class="form-check-label" for="nine-5">5 (strongly agree)</label>
-                                    </div>
-                                </fieldset>
-                                <fieldset class="question">
-                                    <legend>Question 10: You would rather fix a problem than complain about it, no
-                                        matter how hard it is.</legend>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="ten" id="inlineRadio1"
-                                            value="1" checked>
-                                        <label class="form-check-label" for="ten-1">1 (strongly disagree)</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="ten" id="inlineRadio2"
-                                            value="2">
-                                        <label class="form-check-label" for="ten-2">2</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="ten" id="inlineRadio3"
-                                            value="3">
-                                        <label class="form-check-label" for="ten-3">3</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="ten" id="inlineRadio4"
-                                            value="4">
-                                        <label class="form-check-label" for="ten-4">4</label>
-                                    </div>
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="ten" id="inlineRadio5"
-                                            value="5">
-                                        <label class="form-check-label" for="ten-5">5 (strongly agree)</label>
-                                    </div>
-                                </fieldset>
-                                <button type="submit" class="form-submit-button" id="submit friend-btn">Submit</button>
+
+                                <div class="form-group">
+                                    <label for="ques1">Question 1: You are 100% loyal to your friends.</label>
+                                    <select data-placeholder="" class="form-control chosen-select" id="q1">
+                                        <option value=""></option>
+                                        <option value="1">1 (Strongly Disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ques2">Question 2: You are optimistic.</label>
+                                    <select data-placeholder="" class="form-control chosen-select" id="q2">
+                                        <option value=""></option>
+                                        <option value="1">1 (Strongly Disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ques3">Question 3: People understand you all the time.</label>
+                                    <select data-placeholder="" class="form-control chosen-select" id="q3">
+                                        <option value=""></option>
+                                        <option value="1">1 (Strongly Disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ques4">Question 4: You are a Weirdo and you love it.</label>
+                                    <select data-placeholder="" class="form-control chosen-select" id="q4">
+                                        <option value=""></option>
+                                        <option value="1">1 (Strongly Disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ques5">Question 5: People would describe you as laid back.</label>
+                                    <select data-placeholder="" class="form-control chosen-select" id="q5">
+                                        <option value=""></option>
+                                        <option value="1">1 (Strongly Disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ques6">Question 6: You are the most practical person you know.</label>
+                                    <select data-placeholder="" class="form-control chosen-select" id="q6">
+                                        <option value=""></option>
+                                        <option value="1">1 (Strongly Disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ques7">Question 7: Your needs come first.</label>
+                                    <select data-placeholder="" class="form-control chosen-select" id="q7">
+                                        <option value=""></option>
+                                        <option value="1">1 (Strongly Disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ques8">Question 8: You'd rather be in the background than be the center of
+                                            attention.</label>
+                                    <select data-placeholder="" class="form-control chosen-select" id="q8">
+                                        <option value=""></option>
+                                        <option value="1">1 (Strongly Disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ques9">Question 9: You love meeting new people.</label>
+                                    <select data-placeholder="" class="form-control chosen-select" id="q9">
+                                        <option value=""></option>
+                                        <option value="1">1 (Strongly Disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="ques10">Question 10: You would rather fix a problem than complain about it, no
+                                            matter how hard it is.</label>
+                                    <select data-placeholder="" class="form-control chosen-select" id="q10">
+                                        <option value=""></option>
+                                        <option value="1">1 (Strongly Disagree)</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5 (Strongly Agree)</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="form-submit-button" id="submit">Submit</button>
+
                             </form>
+
                         </div>
                     </div>
                 </div>
@@ -356,82 +187,76 @@
             </div>
         </div>
 
-    </div>
+    </div> <!-- End container-fluid -->
 
     <div id="matchModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">
-                        &times;
-                    </button>
-                    <h2 class="modal-title"><strong>Best Match</strong></h2>
-                </div>
-
-                <div class="modal-body">
-                    <h2 id="matchName"></h2>
-                    <img id="matchPicture" src="https://via.placeholder.com/400x400" alt="Placeholder image" />
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">
-                        Close
-                    </button>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            &times;
+                        </button>
+                        <h2 class="modal-title"><strong>Best Match</strong></h2>
+                    </div>
+    
+                    <div class="modal-body">
+                        <h2 id="matchName"></h2>
+                        <img id="matchPicture" src="https://via.placeholder.com/400x400" alt="Placeholder image" />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">
+                            Close
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <script type="text/javascript">
-        $("#friend-btn").on("click", function () {
-            function validateForm() {
-                var isValid = true;
-                $(".form-control").each(function () {
-                    if ($(this).val() === "") isValid = false;
-                })
-                return isValid;
+        <script type="text/javascript">
+            $("#submit").on("click", function () {
+                function validateForm() {
+                    var isValid = true;
+                    $(".form-control").each(function () {
+                        if ($(this).val() === "") isValid = false;
+                    })
+                    $(".chosen-select").each(function () {
+                        if ($(this).val() === "") isValid = false;
+                    })
+                    return isValid;
             }
-            if (validateForm() === true) {
-
-                var radioResponses = [];
-                var radioNames = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
-
-                function radioRespGatherer(arr) {
-
-                    for (var i = 0; i < arr.length; i++) {
-                        var quesResponse = document.getElementsByName(arr[i]);
-
-                        for (var i = 0; i < quesResponse.length; i++) {
-                            if (quesResponse[i].checked == true) {
-                                radioResponses.push[quesResponse[i].val()];
-                            }
-                        }
-                    }
-                }
-
-                radioRespGatherer(radioNames);
-                //    console.log(radioResponses); // Not working.
-
-                var newFriend = {
+            if (validateForm() == true) {
+                var userData = {
                     name: $("#name").val(),
-                    picture: $("#pictureLink").val(),
-                    scores: radioResponses
-
+                    picture: $("#picture-link").val(),
+                    scores: [
+                        $("#q1").val(),
+                        $("#q2").val(),
+                        $("#q3").val(),
+                        $("#q4").val(),
+                        $("#q5").val(),
+                        $("#q6").val(),
+                        $("#q7").val(),
+                        $("#q8").val(),
+                        $("#q9").val(),
+                        $("#q10").val()
+                    ]
                 };
 
+              
             //    var currentURL = window.location.origin;
-
-                // $.post(currentURL + "/api/friends", newFriend, function (data) {
-                    $.post("/api/friends", newFriend, function (data) {
-                    $("#matchName").text(data.name);
-                    $("#matchPicture").attr("src", data.photo);
-                    $("#matchModal").modal("toggle");
-                });
-            } else {
+            $.post("api/friends", userData, function(data) { //currentURL +
+                $("#matchName").text(data.name);
+                $("#matchPicture").attr("src", data.picture);
+               
+                $("#matchModal").modal("show");
+            })
+            
+            }else{
                 alert("Please fill out all fields!");
-
             }
+
         });
-    </script>
+
+        </script>
 </body>
 
 </html>
