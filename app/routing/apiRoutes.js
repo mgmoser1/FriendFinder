@@ -107,6 +107,7 @@ module.exports = function (app) {
 				}
 				console.log("This is closest in findClosest: " + closest); // this finds the lowest number
 			}
+			
 			return closestIndex;
 		}
 
