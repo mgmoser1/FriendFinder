@@ -7,7 +7,7 @@ var friends = [
     },
     {
         name: "Sweetums",
-        picture: "/assets/images/sweetums.jpg",
+        picture: "/assets/images/sweetums-2.jpg",
         scores: [4,2,2,3,2,3,3,4,5,3],
     },
     {
@@ -79,6 +79,11 @@ var friends = [
         name: "Zoot",
         picture: "/assets/images/zoot.jpg",
         scores: [3,3,4,3,4,3,3,3,3,2],
+    },
+    {
+        name: "Megan Moser",
+        picture: "/assets/images/astro-me.jpg",
+        scores: [5,3,3,5,3,3,2,4,3,4],
     },
 
 ];

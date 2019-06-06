@@ -11,50 +11,19 @@ module.exports = function (app) {
 		res.json(friends);
     });
     
-    /* This is what's coming in from the html file:
-    
-    var userData = {
-                    name: $("#name").val(),
-                    picture: $("#picture-link").val(),
-                    scores: [
-                        $("q1").val(),
-                        $("q2").val(),
-                        $("q3").val(),
-                        $("q4").val(),
-                        $("q5").val(),
-                        $("q6").val(),
-                        $("q7").val(),
-                        $("q8").val(),
-                        $("q9").val(),
-                        $("q10").val()
-                    ]
-                };
-                var currentURL = window.locatoin.origin;
-            $.post(currentURL + "api/friends", userData, function(data) {
-                $("#matchName").text(data.name);
-                $("#matchPicture").attr("src", data.picture);
-                $("#matchModal").modal("toggle");
-            })
-    
-    
-    */
+   
 
 	// Create New Friends - takes in JSON input
 	app.post('/api/friends', function (req, res) {
 		// req.body hosts is equal to the JSON post sent from the user
         // This works because of our body parsing middleware
         
-        console.log(req.scores);
 
         var userData = req.body;
 		var userName = userData.name;
 		var userPicture = userData.picture;
         var userScores = userData.scores; // not sure about this.
         
-        /* var parsedScores = userScores.map(function (each) {
-			parseInt(each, 10);
-		}); */
-
         var parsedScores = userScores.map(Number);
 
         console.log(userName);
@@ -90,7 +59,6 @@ module.exports = function (app) {
 				var d = Math.abs(arr1[i] - arr2[i]);
 				difference += d;
 			}
-			console.log("This is difference in compareArrs:" + difference);
 			return difference;
 		}
 
@@ -105,10 +73,8 @@ module.exports = function (app) {
 					closest = d;
 					closestIndex = i;
 				}
-				console.log("This is closest in findClosest: " + closest); // this finds the lowest number
 			}
-			
-			return closestIndex;
+				return closestIndex;
 		}
 
 		var bestScoreIndex = findClosest(friendScores, userScores);
@@ -120,7 +86,7 @@ module.exports = function (app) {
 			score: closest
 		};
 
-        console.log(bestMatch);
+    //    console.log(bestMatch);
         
         friends.push(newFriend);
         
