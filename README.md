@@ -7,7 +7,7 @@ I know what keeps you up at night. In the wee hours of the morning there is noth
 
 
 ## Getting Started
-This app has been deployed on Heroku at https://git.heroku.com/morning-hamlet-52684.git .
+This app has been deployed on Heroku at https://morning-hamlet-52684.herokuapp.com/ .
 
 
 ## Project Overview
